@@ -5,7 +5,8 @@ node{
   }
 
   stage('Build') {
-    sh './gradlew assembleDubg'
+    sh './gradlew clean assembleDubg'
+    archiveArtifacts 'app/build/outputs/apk/debug/app-debug.apk'
 
   }
 }
